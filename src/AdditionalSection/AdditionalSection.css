@@ -1,0 +1,9 @@
+.AdditionalSection {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.Button {
+    margin: 0 10px;
+}

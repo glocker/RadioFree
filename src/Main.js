@@ -1,34 +1,24 @@
 import React from 'react';
+import './Main.css'
+import ColorsList from './ColorsList/ColorsList';
+import AdditionalSection from "./AdditionalSection/AdditionalSection";
 
-const Main = () => {
+class Main extends React.Component {
 
-    // Get hash from URL address
-    const hash = window.location.href;
-
-    // Write down the regex which helps us get colors
-    const regex = /http:\/\/localhost:8080\/#tags=([a-zA-Z]+(,[a-zA-Z]+)+)/i;
-
-    // Get the array of colors: strings
-    const colorsList = regex.exec(hash)[1].split(',');
-
-    function renderColors(colorsList) {
-
-        // For every color in array return <li> element
-        return colorsList.map((color, index) => {
-            return <li key={index}>
-                        {color}
-                   </li>
-        });
+    componentDidMount(e) {
+        window.addEventListener("hashchange",
+                e =>
+                    console.log('hashchange1', window.location.hash ));
     }
 
-    return (
-        <div>
-            <h3>Radio Liberty</h3>
-            <ul>
-                {renderColors(colorsList)}
-            </ul>
-        </div>
-    );
+    render() {
+        return (
+            <div className="container">
+                <ColorsList />
+                <AdditionalSection />
+            </div>
+        )
+    }
 };
 
 export default Main;
