@@ -3,7 +3,7 @@ import React from 'react';
 const ColorsList = () => {
 
     // Get hash from URL address
-    let hash = window.location.href;
+    const hash = window.location.hash;
 
     // Delete '#tags=' from URL and put each color as string in array
     const colorsList = hash.substring(6).split(',');
@@ -13,9 +13,8 @@ const ColorsList = () => {
 
         // For every color in array return <li> element
         return colorsList.map((color, index) => {
-            return <li key={index}>
-                {color}
-            </li>
+            return !!hash ? <li key={index}>{color}</li>
+                          : <li key={index}>No colors in hash</li>
         });
     }
 
