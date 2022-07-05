@@ -20,7 +20,7 @@ const ColorsList = () => {
 
     return (
         <div>
-            <h3>Radio Liberty</h3>
+            <h3>Colors List</h3>
             <ul>
                 {renderColors(colorsList)}
             </ul>

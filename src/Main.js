@@ -7,8 +7,7 @@ class Main extends React.Component {
 
     componentDidMount(e) {
         window.addEventListener("hashchange",
-                e =>
-                    console.log('hashchange1', window.location.hash ));
+                e => ('hashchange1', window.location.hash ));
     }
 
     render() {

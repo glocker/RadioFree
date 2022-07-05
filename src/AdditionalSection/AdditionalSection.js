@@ -32,7 +32,6 @@ const AdditionalSection = () => {
                         Add tag
                     </button>
                 </form>
-                <div>Tag: {state}</div>
             </div>
         )
 }
